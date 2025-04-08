@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rendőrségi Adatbevitel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0055ff" />
+</head>
+<body>
+
+  <!-- BELÉPÉS -->
+  <div class="container" id="login-container">
+    <h1>🔐 Rendőrségi Belépés</h1>
+    <form id="login-form">
+      <input type="text" name="officerName" placeholder="Név" required>
+      <input type="text" name="badge" placeholder="Jelvényszám" required>
+      <input type="password" name="password" placeholder="Jelszó" required>
+      <button type="submit">Belépés</button>
+    </form>
+  </div>
+
+  <!-- ADATBEVITEL -->
+  <div class="container" id="form-container" style="display:none;">
+    <h1>Rendőrségi Jegyzőkönyv</h1>
+    <p><strong>Ügyeletes:</strong> <span id="officer-display"></span></p>
+    <form id="police-form">
+      <input type="text" name="suspectName" placeholder="Gyanúsított neve" required />
+      <input type="text" name="location" id="location" placeholder="Helyszín" required />
+      <input type="datetime-local" name="timestamp" id="timestamp" required />
+      <textarea name="description" placeholder="Esemény leírása" rows="4" required></textarea>
+      <input type="file" name="photo" accept="image/*" capture="environment" required />
+      <button type="submit">Mentés</button>
+    </form>
+
+    <div id="preview" style="display:none;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
